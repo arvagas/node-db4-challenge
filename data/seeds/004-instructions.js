@@ -1,7 +1,7 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('instructions').truncate()
+  return knex('instructions')
     .then(function () {
       // Inserts seed entries
       return knex('instructions').insert([
@@ -16,6 +16,7 @@ exports.seed = function(knex) {
         {step_number: 3, description: "Finish with top bun, flat side facing down", recipe_id: 3},
         {step_number: 2, description: "Arrange insides as you want", recipe_id: 3},
         {step_number: 1, description: "Start with bottom bun, flat side facing up", recipe_id: 3},
+        {step_number: 1, description: "Cook egg until whites are fully cooked", recipe_id: 4},
       ]);
     });
 };
