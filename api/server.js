@@ -1,5 +1,7 @@
 const express = require('express')
 
+const recipeRoute = require('./recipes/recipe-route')
+
 const server = express()
 server.use(express.json())
 
@@ -13,6 +15,7 @@ const logger = (req, res, next) => {
 server.use(logger)
 
 // Route handling
+server.use('/api/recipes', recipeRoute)
 
 // Hello world test
 server.get('/', (req, res) => {
